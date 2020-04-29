@@ -1,0 +1,438 @@
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <title>TestDisconnectAllThenRestore -- PASS</title>
+  </head>
+  <style>
+  table {
+    font-family: "Courier New";
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    padding: 8px;
+    border: 1px solid #cccccc;
+  }
+
+  td.testcell {
+    background-color: #ffffff;
+  }
+
+  td.Follower {
+    background-color: #ffffff;
+  }
+
+  td.Candidate {
+    background-color: #e2e2a3;
+  }
+
+  td.Leader {
+    background-color: #e6fff5;
+  }
+
+  td.Dead {
+    background-color: #dddddd;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  </style>
+<body>
+  <h1>TestDisconnectAllThenRestore -- PASS</h1>
+  <p></p>
+  <table>
+    <tr>
+      
+      <th>Time</th>
+      
+      <th>TEST</th>
+      
+      <th>0</th>
+      
+      <th>1</th>
+      
+      <th>2</th>
+      
+    </tr>
+    
+    <tr>
+      <td>13:50:00.738086</td>  <td class="testcell"></td>  <td class="Follower">listening at [::]:54454</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.760027</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:54455</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.761025</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:54456</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.765016</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (236ms), 任期term=0</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.765016</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (268ms), 任期term=0</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.765016</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (271ms), 任期term=0</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.865848</td>  <td class="testcell">Disconnect 0</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.865848</td>  <td class="testcell">Disconnect 1</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:00.865848</td>  <td class="testcell">Disconnect 2</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.005505</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=1); log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.005505</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.005505</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 2 发送RequestVote请求 : {Term:1 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.005505</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (246ms), 任期term=1</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.035394</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=1); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.035394</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.035394</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 1 发送RequestVote请求 : {Term:1 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.035394</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (277ms), 任期term=1</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.045399</td>  <td class="testcell"></td>  <td class="Follower">变为候选人 (currentTerm=1); log=[]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.045399</td>  <td class="testcell"></td>  <td class="Follower">向服务器 2 发送RequestVote请求 : {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.045399</td>  <td class="testcell"></td>  <td class="Follower">向服务器 1 发送RequestVote请求 : {Term:1 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.045399</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (279ms), 任期term=1</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.255804</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=2); log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.255804</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.255804</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 2 发送RequestVote请求 : {Term:2 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.255804</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (216ms), 任期term=2</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.315645</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=2); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.315645</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.315645</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 1 发送RequestVote请求 : {Term:2 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.315645</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (158ms), 任期term=2</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.316641</td>  <td class="testcell">Reconnect 0</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.318637</td>  <td class="testcell">Reconnect 1</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.319640</td>  <td class="testcell">Reconnect 2</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.325646</td>  <td class="testcell"></td>  <td class="Follower">变为候选人 (currentTerm=2); log=[]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.325646</td>  <td class="testcell"></td>  <td class="Follower">向服务器 1 发送RequestVote请求 : {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.325646</td>  <td class="testcell"></td>  <td class="Follower">向服务器 2 发送RequestVote请求 : {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.325646</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (287ms), 任期term=2</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.328616</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.328616</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:2 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.328616</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote应答 : {Term:2 VoteGranted:false}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.331602</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:2 CandidateId:0 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.331602</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:2 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.331602</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote应答 : {Term:2 VoteGranted:false}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=3); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=3); log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (167ms), 任期term=3</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 1 发送RequestVote请求 : {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求 : {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 2 发送RequestVote请求 : {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.476216</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (186ms), 任期term=3</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.478210</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=1]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.478210</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:3 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.478210</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.479207</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=2]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.479207</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.479207</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:3 VoteGranted:false}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote请求: {Term:3 CandidateId:1 LastLogIndex:0 LastLogTerm:0} [currentTerm=2, votedFor=0]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower">... 当前任期早于RequestVote任期，变为Follower</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower">变为Follower, 任期term=3; 日志log=[]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower">... RequestVote 应答: &{Term:3 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (271ms), 任期term=3</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:3 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">以 2 票数胜选，成为Leader</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">成为Leader; term=3, log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 0: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.480205</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 2: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.481202</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote请求: {Term:3 CandidateId:2 LastLogIndex:0 LastLogTerm:0} [currentTerm=3, votedFor=1]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.481202</td>  <td class="testcell"></td>  <td class="Follower">... RequestVote 应答: &{Term:3 VoteGranted:false}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.481202</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:3 VoteGranted:false}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.486188</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.486188</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.486188</td>  <td class="testcell"></td>  <td class="Follower">选举定时器中的term从 2 变为 3, 退出</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.487186</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器中的服务器状态 state=Leader, 退出</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.487186</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.487186</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为Follower, 任期term=3; 日志log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.487186</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.487186</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (236ms), 任期term=3</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.531068</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 0: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.531068</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 2: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.536054</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.536054</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.537052</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.537052</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.580618</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 0: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.580618</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求 2: ni=0, args={Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.587600</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.587600</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.589592</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:3 LeaderId:1 PrevLogIndex:0 PrevLogTerm:0 Entries:[] LeaderCommit:0}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.589592</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:3 Success:true}</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.620513</td>  <td class="testcell"></td>  <td class="Dead">becomes Dead</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.620513</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.620513</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.626492</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>
+    </tr>
+    
+    <tr>
+      <td>13:50:01.627490</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>
+    </tr>
+    
+  </table>
+</body>
+</html>

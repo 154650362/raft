@@ -45,10 +45,12 @@ func TestElectionLeaderAndAnotherDisconnect(t *testing.T) {
 	h.DisconnectPeer(otherId)
 
 	// No quorum.
+	// 选票人数不足
 	sleepMs(450)
 	h.CheckNoLeader()
 
 	// Reconnect one other server; now we'll have quorum.
+	// 重连到其它服务器，现在选票数满足要求
 	h.ReconnectPeer(otherId)
 	h.CheckSingleLeader()
 }
@@ -59,6 +61,7 @@ func TestDisconnectAllThenRestore(t *testing.T) {
 
 	sleepMs(100)
 	//	Disconnect all servers from the start. There will be no leader.
+	// 开始时断开所有服务器的连接，集群没有领导者
 	for i := 0; i < 3; i++ {
 		h.DisconnectPeer(i)
 	}
@@ -66,6 +69,7 @@ func TestDisconnectAllThenRestore(t *testing.T) {
 	h.CheckNoLeader()
 
 	// Reconnect all servers. A leader will be found.
+	// 重连所有服务器，会选举出一个领导者
 	for i := 0; i < 3; i++ {
 		h.ReconnectPeer(i)
 	}
@@ -158,11 +162,11 @@ func TestElectionDisconnectLoop(t *testing.T) {
 		sleepMs(310)
 		h.CheckNoLeader()
 
-		// Reconnect both.
+		// 两个服务器都进行重连
 		h.ReconnectPeer(otherId)
 		h.ReconnectPeer(leaderId)
 
-		// Give it time to settle
+		// 留时间给服务器进行调整
 		sleepMs(150)
 	}
 }
