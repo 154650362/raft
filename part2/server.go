@@ -22,6 +22,11 @@ import (
 // presentation purposes. raft.ConsensusModule has a *Server to do its peer
 // communication and doesn't have to worry about the specifics of running an
 // RPC server.
+/*
+    Server包装了raft.ConsensusModule和rpc.Server，并将后者暴露为RPC端点。同时还负责管理Raft服务器的同伴。
+	这样设计的主要目的是简化用于演示的raft.Server代码。
+	raft.ConsensusModule可以通过*Server与同伴进行通信，而不必关心RPC服务器的具体细节。
+*/
 type Server struct {
 	mu sync.Mutex
 
@@ -59,6 +64,7 @@ func (s *Server) Serve() {
 
 	// Create a new RPC server and register a RPCProxy that forwards all methods
 	// to n.cm
+	// 创建新的RPC服务，并注册一个RPCProxy，将所有的方法调用转发到 n.cm
 	s.rpcServer = rpc.NewServer()
 	s.rpcProxy = &RPCProxy{cm: s.cm}
 	s.rpcServer.RegisterName("ConsensusModule", s.rpcProxy)
@@ -95,6 +101,7 @@ func (s *Server) Serve() {
 }
 
 // DisconnectAll closes all the client connections to peers for this server.
+// DisconnectAll该方法会断开本服务器到同伴服务器之间的所有客户端连接
 func (s *Server) DisconnectAll() {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -107,6 +114,7 @@ func (s *Server) DisconnectAll() {
 }
 
 // Shutdown closes the server and waits for it to shut down properly.
+// Shutdown方法会关闭该服务器，并等待其正确关闭
 func (s *Server) Shutdown() {
 	s.cm.Stop()
 	close(s.quit)
@@ -134,6 +142,7 @@ func (s *Server) ConnectToPeer(peerId int, addr net.Addr) error {
 }
 
 // DisconnectPeer disconnects this server from the peer identified by peerId.
+// DisconnectPeer会断开与peerId对应的同伴服务器之间的连接
 func (s *Server) DisconnectPeer(peerId int) error {
 	s.mu.Lock()
 	defer s.mu.Unlock()
@@ -152,6 +161,7 @@ func (s *Server) Call(id int, serviceMethod string, args interface{}, reply inte
 
 	// If this is called after shutdown (where client.Close is called), it will
 	// return an error.
+	// 如果在关闭（调用client.Close）之后进行方法调用，会返回错误
 	if peer == nil {
 		return fmt.Errorf("call client %d after it's closed", id)
 	} else {
@@ -165,6 +175,14 @@ func (s *Server) Call(id int, serviceMethod string, args interface{}, reply inte
 // - Avoiding running into https://github.com/golang/go/issues/19957
 // - Simulating possible unreliable connections by delaying some messages
 //   significantly and dropping others when RAFT_UNRELIABLE_RPC is set.
+/*
+	RPCProxy是ConsensusModule中的RPC方法的直通代理类型。
+	作用如下：
+	1 - 模拟RPC传输过程中的微小延迟
+	2 - 防止出现 https://github.com/golang/go/issues/19957 所提的问题
+	3 - 当设置RAFT_UNRELIABLE_RPC时，通过刻意延迟某些消息并丢弃其他消息
+		来模拟可能出现的不可靠连接。
+*/
 type RPCProxy struct {
 	cm *ConsensusModule
 }

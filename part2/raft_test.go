@@ -45,10 +45,12 @@ func TestElectionLeaderAndAnotherDisconnect(t *testing.T) {
 	h.DisconnectPeer(otherId)
 
 	// No quorum.
+	// 选票人数不足
 	sleepMs(450)
 	h.CheckNoLeader()
 
 	// Reconnect one other server; now we'll have quorum.
+	// 重连到其它服务器，现在选票数满足要求
 	h.ReconnectPeer(otherId)
 	h.CheckSingleLeader()
 }
@@ -59,6 +61,7 @@ func TestDisconnectAllThenRestore(t *testing.T) {
 
 	sleepMs(100)
 	//	Disconnect all servers from the start. There will be no leader.
+	// 开始时断开所有服务器的连接，集群没有领导者
 	for i := 0; i < 3; i++ {
 		h.DisconnectPeer(i)
 	}
@@ -66,6 +69,7 @@ func TestDisconnectAllThenRestore(t *testing.T) {
 	h.CheckNoLeader()
 
 	// Reconnect all servers. A leader will be found.
+	// 重连所有服务器，会选举出一个领导者
 	for i := 0; i < 3; i++ {
 		h.ReconnectPeer(i)
 	}
@@ -158,11 +162,11 @@ func TestElectionDisconnectLoop(t *testing.T) {
 		sleepMs(310)
 		h.CheckNoLeader()
 
-		// Reconnect both.
+		// 两个服务器都进行重连
 		h.ReconnectPeer(otherId)
 		h.ReconnectPeer(leaderId)
 
-		// Give it time to settle
+		// 留时间给服务器进行调整
 		sleepMs(150)
 	}
 }
@@ -240,6 +244,7 @@ func TestCommitWithDisconnectionAndRecover(t *testing.T) {
 	defer h.Shutdown()
 
 	// Submit a couple of values to a fully connected cluster.
+	// 呈递一些数据给完全互连的集群
 	origLeaderId, _ := h.CheckSingleLeader()
 	h.SubmitToServer(origLeaderId, 5)
 	h.SubmitToServer(origLeaderId, 6)
@@ -252,11 +257,13 @@ func TestCommitWithDisconnectionAndRecover(t *testing.T) {
 	sleepMs(150)
 
 	// Submit a new command; it will be committed but only to two servers.
+	// 呈递新指令，它只会被提交到两个服务器
 	h.SubmitToServer(origLeaderId, 7)
 	sleepMs(150)
 	h.CheckCommittedN(7, 2)
 
 	// Now reconnect dPeerId and wait a bit; it should find the new command too.
+	// 现在重连dPeerId服务器并等待一会儿，它也会接收到新指令
 	h.ReconnectPeer(dPeerId)
 	sleepMs(400)
 	h.CheckSingleLeader()
@@ -300,6 +307,8 @@ func TestNoCommitWithNoQuorum(t *testing.T) {
 	// A new leader will be elected. It could be a different leader, even though
 	// the original's log is longer, because the two reconnected peers can elect
 	// each other.
+	// 新领导者被选出。即使原领导者的日志更长，也可能会出现其它的领导者。
+	// 因为重连的同伴可以互相投票
 	newLeaderId, againTerm := h.CheckSingleLeader()
 	if origTerm == againTerm {
 		t.Errorf("got origTerm==againTerm==%d; want them different", origTerm)
