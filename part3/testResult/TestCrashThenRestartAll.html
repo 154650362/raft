@@ -1,0 +1,1234 @@
+
+<!doctype html>
+<html lang='en'>
+  <head>
+    <title>TestCrashThenRestartAll -- PASS</title>
+  </head>
+  <style>
+  table {
+    font-family: "Courier New";
+    border-collapse: collapse;
+  }
+
+  table, th, td {
+    padding: 8px;
+    border: 1px solid #cccccc;
+  }
+
+  td.testcell {
+    background-color: #ffffff;
+  }
+
+  td.Follower {
+    background-color: #ffffff;
+  }
+
+  td.Candidate {
+    background-color: #e2e2a3;
+  }
+
+  td.Leader {
+    background-color: #e6fff5;
+  }
+
+  td.Dead {
+    background-color: #dddddd;
+  }
+
+  h1 {
+    text-align: center;
+  }
+  </style>
+<body>
+  <h1>TestCrashThenRestartAll -- PASS</h1>
+  <p></p>
+  <table>
+    <tr>
+      
+      <th>Time</th>
+      
+      <th>TEST</th>
+      
+      <th>0</th>
+      
+      <th>1</th>
+      
+      <th>2</th>
+      
+    </tr>
+    
+    <tr>
+      <td>16:01:40.198659</td>  <td class="testcell"></td>  <td class="Follower">listening at [::]:10539</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.213619</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:10540</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.214616</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:10541</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.218605</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (260ms), 任期term=0</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.218605</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (156ms), 任期term=0</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.218605</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (279ms), 任期term=0</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.379177</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=1); log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.380173</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (219ms), 任期term=1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.380173</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求: {Term:1 CandidateId:2 LastLogIndex:-1 LastLogTerm:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.380173</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 1 发送RequestVote请求: {Term:1 CandidateId:2 LastLogIndex:-1 LastLogTerm:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.383195</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote请求: {Term:1 CandidateId:2 LastLogIndex:-1 LastLogTerm:-1} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.383195</td>  <td class="testcell"></td>  <td class="Follower">... 当前任期早于RequestVote任期，变为Follower</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.383195</td>  <td class="testcell"></td>  <td class="Follower">变为Follower, 任期term=1; 日志log=[]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.383195</td>  <td class="testcell"></td>  <td class="Follower">... RequestVote 应答: &{Term:1 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.383195</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (256ms), 任期term=1</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.384164</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:1 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.384164</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">以 2 票数胜选，成为Leader</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.384164</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">成为Leader; term=1, nextIndex=map[0:0 1:0], matchIndex=map[0:-1 1:-1]; log=[]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.384164</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.384164</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:1 CandidateId:2 LastLogIndex:-1 LastLogTerm:-1} [currentTerm=0, votedFor=-1, log index/term=(-1, -1)]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 当前任期早于RequestVote任期，变为Follower</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">变为Follower, 任期term=1; 日志log=[]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:1 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (158ms), 任期term=1</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:1 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.385160</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">等待RequestVote回复时, 状态变为 Leader</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.388181</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.388181</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.388181</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.389150</td>  <td class="testcell"></td>  <td class="Follower">选举定时器中的term从 0 变为 1, 退出</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.389150</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器中的term从 0 变为 1, 退出</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.390176</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器中的服务器状态 state=Leader, 退出</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.390176</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.390176</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.390176</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.435026</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.435026</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.437021</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.437021</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.437021</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.438019</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.438019</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.438019</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.485891</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.485891</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.488904</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.488904</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.489881</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.490878</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.490878</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.490878</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:0 1:0], matchIndex := map[0:-1 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">Leader 收到新指令呈递: 5</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... log=[{5 1}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">Leader 收到新指令呈递: 6</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... log=[{5 1} {6 1}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">Leader 收到新指令呈递: 7</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... log=[{5 1} {6 1} {7 1}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.520826</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.521801</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.521801</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.521801</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower">... 从索引 index 0 处开始插入日志 [{5 1} {6 1} {7 1}] </td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower">... 现在日志内容为: [{5 1} {6 1} {7 1}]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:0], matchIndex := map[0:2 1:-1]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">leader 设置 commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1}], 最近执行指令索引savedLastApplied=-1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell">collectCommits(2) got {Command:5 Index:0 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell">collectCommits(2) got {Command:6 Index:1 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell">collectCommits(2) got {Command:7 Index:2 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.524787</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=0, args={Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.525784</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 从索引 index 0 处开始插入日志 [{5 1} {6 1} {7 1}] </td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 现在日志内容为: [{5 1} {6 1} {7 1}]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.526782</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower">... 设置 commitIndex 为 2</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1}], 最近执行指令索引savedLastApplied=-1</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell">collectCommits(0) got {Command:5 Index:0 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell">collectCommits(0) got {Command:6 Index:1 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell">collectCommits(0) got {Command:7 Index:2 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.527779</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:-1 PrevLogTerm:-1 Entries:[{Command:5 Term:1} {Command:6 Term:1} {Command:7 Term:1}] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 设置 commitIndex 为 2</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1}], 最近执行指令索引savedLastApplied=-1</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell">collectCommits(1) got {Command:5 Index:0 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell">collectCommits(1) got {Command:6 Index:1 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.528776</td>  <td class="testcell">collectCommits(1) got {Command:7 Index:2 Term:1}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.575651</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.575651</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.579641</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.579641</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.579641</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.581636</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.581636</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.581636</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.626544</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.626544</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.628509</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.678377</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.678377</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.680371</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.680371</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.680371</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.681370</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.681370</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.681370</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.729269</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.729269</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.734227</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.734227</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.734227</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.735225</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.735225</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.735225</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.780133</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.780133</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.782099</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.782099</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.782099</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.783097</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.783097</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.783097</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.830968</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.830968</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:1 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:2}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:1 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.835955</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := 2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell">Crash 2</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell">Disconnect 2</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Dead">becomes Dead</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell">Crash 0</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell">Disconnect 0</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell"></td>  <td class="Dead">becomes Dead</td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.870861</td>  <td class="testcell"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.871865</td>  <td class="testcell">Crash 1</td>  <td class="Dead"></td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.871865</td>  <td class="testcell">Disconnect 1</td>  <td class="Dead"></td>  <td class="Follower"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.871865</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.871865</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.873857</td>  <td class="testcell"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>  <td class="Dead"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:40.875849</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.221923</td>  <td class="testcell">Restart 2</td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.221923</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Follower">listening at [::]:10548</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.221923</td>  <td class="testcell">Reconnect 2</td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.221923</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Follower">选举定时器启动 (206ms), 任期term=1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.242867</td>  <td class="testcell">Restart 0</td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.242867</td>  <td class="testcell"></td>  <td class="Follower">listening at [::]:10549</td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.242867</td>  <td class="testcell">Reconnect 0</td>  <td class="Follower"></td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.243866</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (202ms), 任期term=1</td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.264837</td>  <td class="testcell">Restart 1</td>  <td class="Follower"></td>  <td class="Dead"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.264837</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">listening at [::]:10552</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.264837</td>  <td class="testcell">Reconnect 1</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.266803</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (185ms), 任期term=1</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.432363</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">变为候选人 (currentTerm=2); log=[{5 1} {6 1} {7 1}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.432363</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 0 发送RequestVote请求: {Term:2 CandidateId:2 LastLogIndex:2 LastLogTerm:1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.432363</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (152ms), 任期term=2</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.432363</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">向服务器 1 发送RequestVote请求: {Term:2 CandidateId:2 LastLogIndex:2 LastLogTerm:1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower">收到RequestVote请求: {Term:2 CandidateId:2 LastLogIndex:2 LastLogTerm:1} [currentTerm=1, votedFor=2, log index/term=(2, 1)]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower">... 当前任期早于RequestVote任期，变为Follower</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower">变为Follower, 任期term=2; 日志log=[{5 1} {6 1} {7 1}]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower">... RequestVote 应答: &{Term:2 VoteGranted:true}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower">选举定时器启动 (175ms), 任期term=2</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:2 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">以 2 票数胜选，成为Leader</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.435352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">成为Leader; term=2, nextIndex=map[0:3 1:3], matchIndex=map[0:-1 1:-1]; log=[{5 1} {6 1} {7 1}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.436350</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.436350</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote请求: {Term:2 CandidateId:2 LastLogIndex:2 LastLogTerm:1} [currentTerm=1, votedFor=2, log index/term=(2, 1)]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 当前任期早于RequestVote任期，变为Follower</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">变为Follower, 任期term=2; 日志log=[{5 1} {6 1} {7 1}]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... RequestVote 应答: &{Term:2 VoteGranted:true}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器中的term从 1 变为 2, 退出</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器启动 (153ms), 任期term=2</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">收到RequestVote应答 : {Term:2 VoteGranted:true}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.437352</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">等待RequestVote回复时, 状态变为 Leader</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.438346</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">Leader 收到新指令呈递: 8</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.438346</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">... log=[{5 1} {6 1} {7 1} {8 2}]</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.438346</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.438346</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=3, args={Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:-1}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.439343</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.439343</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.439343</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:-1]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.442333</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.442333</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.442333</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:3], matchIndex := map[0:2 1:2]; commitIndex := -1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">选举定时器中的服务器状态 state=Leader, 退出</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:-1}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 从索引 index 3 处开始插入日志 [{8 2}] </td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 现在日志内容为: [{5 1} {6 1} {7 1} {8 2}]</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:3 1:4], matchIndex := map[0:2 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">leader 设置 commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1} {8 2}], 最近执行指令索引savedLastApplied=-1</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell">collectCommits(2) got {Command:5 Index:0 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell">collectCommits(2) got {Command:6 Index:1 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell">collectCommits(2) got {Command:7 Index:2 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell">collectCommits(2) got {Command:8 Index:3 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=3, args={Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.443332</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:-1}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower">... 从索引 index 3 处开始插入日志 [{8 2}] </td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower">... 现在日志内容为: [{5 1} {6 1} {7 1} {8 2}]</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower">选举定时器中的term从 1 变为 2, 退出</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.444328</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">... 设置 commitIndex 为 3</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1} {8 2}], 最近执行指令索引savedLastApplied=-1</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell">collectCommits(1) got {Command:5 Index:0 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell">collectCommits(1) got {Command:6 Index:1 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell">collectCommits(1) got {Command:7 Index:2 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell">collectCommits(1) got {Command:8 Index:3 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.448318</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:2 PrevLogTerm:1 Entries:[{Command:8 Term:2}] LeaderCommit:3}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell"></td>  <td class="Follower">... 设置 commitIndex 为 3</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell"></td>  <td class="Follower">commitChanSender 向客户端发送指令 entries=[{5 1} {6 1} {7 1} {8 2}], 最近执行指令索引savedLastApplied=-1</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell">collectCommits(0) got {Command:5 Index:0 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell">collectCommits(0) got {Command:6 Index:1 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell">collectCommits(0) got {Command:7 Index:2 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell">collectCommits(0) got {Command:8 Index:3 Term:2}</td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.449315</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.495221</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.495221</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.500180</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.500180</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.500180</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.501205</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.501205</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.502174</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.546059</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.546059</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.548051</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.548051</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.548051</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.552070</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.552070</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.552070</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.596920</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.596920</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.598947</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.598947</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.598947</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.600939</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.600939</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.600939</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.647815</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 0: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.647815</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">发送 AppendEntries 请求到服务器 1: ni=4, args={Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.650776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.650776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.650776</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 1 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.652771</td>  <td class="testcell"></td>  <td class="Follower">收到AppendEntries请求: {Term:2 LeaderId:2 PrevLogIndex:3 PrevLogTerm:2 Entries:[] LeaderCommit:3}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.652771</td>  <td class="testcell"></td>  <td class="Follower">AppendEntries 应答: {Term:2 Success:true ConflictIndex:0 ConflictTerm:0}</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.652771</td>  <td class="testcell"></td>  <td class="Follower"></td>  <td class="Follower"></td>  <td class="Follower">从服务器 0 接收到 AppendEntries 请求的成功应答: nextIndex := map[0:4 1:4], matchIndex := map[0:3 1:3]; commitIndex := 3</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.689680</td>  <td class="testcell"></td>  <td class="Dead">becomes Dead</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.690678</td>  <td class="testcell"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>  <td class="Follower"></td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.690678</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.690678</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>  <td class="Follower"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.690678</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">becomes Dead</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.690678</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead"></td>  <td class="Dead">commitChanSender 向客户端发送指令完成</td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.695686</td>  <td class="testcell"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>  <td class="Dead"></td>  <td class="Dead"></td>
+    </tr>
+    
+    <tr>
+      <td>16:01:41.697676</td>  <td class="testcell"></td>  <td class="Dead"></td>  <td class="Dead">选举定时器中的服务器状态 state=Dead, 退出</td>  <td class="Dead"></td>
+    </tr>
+    
+  </table>
+</body>
+</html>
